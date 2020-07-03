@@ -5,6 +5,7 @@ package _03_photo_quiz;
  */
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -26,19 +27,37 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
+quizWindow.setVisible(true);
+String url = "https://shawglobalnews.files.wordpress.com/2016/04/02404656.jpg?quality=85&strip=all";
 		// 2. create a variable of type "Component" that will hold your image
-
+Component image = createImage(url);
 		// 3. use the "createImage()" method below to initialize your Component
 
 		// 4. add the image to the quiz window
-
+quizWindow.add(image);
 		// 5. call the pack() method on the quiz window
-
+quizWindow.pack();
 		// 6. ask a question that relates to the image
-
-		// 7. print "CORRECT" if the user gave the right answer
-
+String question = JOptionPane.showInputDialog("What show does this person come from?");
+if (question .contentEquals("trailer park boys")) {
+	JOptionPane.showMessageDialog(null, "CORRECT!");
+}
+else {
+	JOptionPane.showMessageDialog(null, "INCORRECT!");
+}
+	// 7. print "CORRECT" if the user gave the right answer
+quizWindow.remove(image);
+String image2 =  "https://img1.looper.com/img/gallery/we-now-know-the-one-time-batman-was-supposed-to-die/intro-1576009072.jpg";
+Component url2 = createImage(image2);
+quizWindow.add(url2);
+quizWindow.pack();
+String question2 = JOptionPane.showInputDialog("Who is this?");
+if (question2 .contentEquals("batman")) {
+	JOptionPane.showMessageDialog(null, "CORRECT!");
+}
+else {
+	JOptionPane.showMessageDialog(null, "INCORRECT!");
+}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
